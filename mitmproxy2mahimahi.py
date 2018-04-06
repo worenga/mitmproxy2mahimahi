@@ -62,7 +62,7 @@ def start():
 def calcMahimahiHash(str_in):
     import ctypes
     v = ctypes.c_uint32(2166136261).value
-    for i in range(len(str_in)-1): #THIS IS A BUG, it should not be -1, do not fix due to compat with existing recordings
+    for i in range(len(str_in)): 
         v = ctypes.c_uint32(v ^ str_in[i]).value
         v = ctypes.c_uint32(v * 16777619).value
     return v
